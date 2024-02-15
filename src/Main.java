@@ -15,13 +15,13 @@ public class Main {
         LogIn log =new LogIn(info);
 
 
-        log.btnLog.addActionListener(new ActionListener() {
+        log.btnFallowLog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                 username[0] =log.userField.getText();
-                 target[0] =log.target.getText();
-                 password[0] =String.valueOf(log.passField.getPassword());
+                 username[0] ="memolv2ray";
+                 target[0] ="donya";
+                 password[0] ="2012@naboodmishim";
 
                 if (username[0].length()>0&&
                         (password[0].length())>0&&
@@ -51,6 +51,50 @@ public class Main {
                 } if (password[0].length()==0){
                     log.labelP.setText("Enter password");
                 } if (target[0].length()==0){
+                    log.labelP.setText("Enter target");
+                }
+
+
+
+
+            }
+        });
+        log.btnUnFallowLog.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                 username[0] ="memolv2ray";
+                 target[0] ="donya";
+                 password[0] ="2012@naboodmishim";
+                if (username[0].length() > 0 &&
+                        (password[0].length()) > 0 &&
+                        target[0].length() > 0) {
+                    log.labelP.setText("Please wait...");
+
+                    try {
+                        UnFallow p2 = new UnFallow();
+                        p2.login(username[0], password[0]);
+                        int count = 1;
+                        while (count < 7) {
+                            System.out.println("Number of load :" + "[" + count + "]");
+                            p2.navigateToSelfProfile();
+                            p2.clickFallowing();
+                            p2.startUnFallow();
+                            count++;
+                        }
+                    } catch (Exception b) {
+                        System.out.print("Error : " + b.getMessage());
+                    }
+                } else {
+                    log.labelP.setText("Fields are empty");
+                }
+                if (username[0].length() == 0) {
+                    log.labelP.setText("Enter username");
+                }
+                if (password[0].length() == 0) {
+                    log.labelP.setText("Enter password");
+                }
+                if (target[0].length() == 0) {
                     log.labelP.setText("Enter target");
                 }
 

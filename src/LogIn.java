@@ -15,7 +15,8 @@ public class LogIn extends JFrame implements ActionListener {
     JTextField target;
 
     JPasswordField passField;
-    JButton btnLog;
+    JButton btnFallowLog;
+    JButton btnUnFallowLog;
     JButton btnRes;
 
     JPanel panel;
@@ -30,7 +31,8 @@ public class LogIn extends JFrame implements ActionListener {
         passLabel=new JLabel("Password");
         userField =new JTextField();
         passField =new JPasswordField();
-        btnLog = new JButton("Log in");
+        btnFallowLog = new JButton("Fallow");
+        btnUnFallowLog = new JButton("UnFallow");
         btnRes = new JButton("Reset");
         labelP = new JLabel("Memol");
         targetLabel = new JLabel("Target");
@@ -43,12 +45,14 @@ public class LogIn extends JFrame implements ActionListener {
         userField.setBounds(85,40,150,22);
         passField.setBounds(85,80,150,22);
         target.setBounds(85,120,150,22);
-        btnLog.setBounds(85,150,70,30);
-        btnRes.setBounds(165,150,70,30);
+        btnUnFallowLog.setBounds(110,150,85,30);
+        btnFallowLog.setBounds(20,150,85,30);
+        btnRes.setBounds(200,150,70,30);
         panel.setBounds(30,190,220,45);
 
-        btnLog.setBackground(Color.GREEN);
-        btnRes.setBackground(Color.GREEN);
+        btnFallowLog.setBackground(Color.GREEN);
+        btnUnFallowLog.setBackground(Color.GREEN);
+        btnRes.setBackground(Color.RED);
 
         userField.setBackground(Color.GREEN);
         passField.setBackground(Color.GREEN);
@@ -86,13 +90,14 @@ public class LogIn extends JFrame implements ActionListener {
         this.add(target);
         this.add(userLabel);
         this.add(passLabel);
-        this.add(btnLog);
+        this.add(btnFallowLog);
+        this.add(btnUnFallowLog);
         this.add(btnRes);
         this.add(panel);
         this.setVisible(true);
 
 
-        btnLog.addActionListener(new ActionListener() {
+        btnFallowLog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String user = userField.getText();
