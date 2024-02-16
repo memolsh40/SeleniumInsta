@@ -19,9 +19,9 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                 username[0] ="memolv2ray";
-                 target[0] ="donya";
-                 password[0] ="2012@naboodmishim";
+                 username[0] =log.userField.getText();
+                 target[0] =log.target.getText();
+                 password[0] =log.passField.getText();
 
                 if (username[0].length()>0&&
                         (password[0].length())>0&&
@@ -63,9 +63,9 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                 username[0] ="memolv2ray";
-                 target[0] ="donya";
-                 password[0] ="2012@naboodmishim";
+                username[0] =log.userField.getText();
+                target[0] =log.target.getText();
+                password[0] =log.passField.getText();
                 if (username[0].length() > 0 &&
                         (password[0].length()) > 0 &&
                         target[0].length() > 0) {
